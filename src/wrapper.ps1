@@ -16,5 +16,3 @@ $num = ($StopTime - $StartTime).TotalMinutes
 $mailarg = [Math]::Round($num, 1, [MidpointRounding]::AwayFromZero);
 # synthesis wav by pydub
 python -u "d:\11_github\sound\src\sendgmail_pack\sendgmail_mod.py" $mailarg
-
-# test#3
