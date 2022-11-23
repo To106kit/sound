@@ -98,10 +98,10 @@ def LoadModel():
     MP.config(state=tkinter.DISABLED)
     SetStatusText("Loading model...unko")
     try:
-        logging.info("Load model (%s) from (%s)" % ("mdx_extra_q", "d:\\11_github\\sound\\venv\\demucs_venv\\Demucs-Gui\\GUI\\pretrained"))
+        logging.info("Load model (%s) from (%s)" % ("mdx_extra_q", "d:\\11_github\\sound\\src\\DemucsGui\\GUI\\pretrained"))
         model = RWCore.GetModel(
             "mdx_extra_q",
-            pathlib.Path("d:\\11_github\\sound\\venv\\demucs_venv\\Demucs-Gui\\GUI\\pretrained") if len("d:\\11_github\\sound\\venv\\demucs_venv\\Demucs-Gui\\GUI\\pretrained") else None,
+            pathlib.Path("d:\\11_github\\sound\\src\\DemucsGui\\GUI\\pretrained") if len("d:\\11_github\\sound\\src\\DemucsGui\\GUI\\pretrained") else None,
             device="cpu",
         )
         time.sleep(10)

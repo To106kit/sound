@@ -92,7 +92,6 @@ for t_tagUrl in t_tagUrl_list:
         print(t_title)
     except Exception as e:
         print(t_tagUrl, e.args)
-        print("unko")
 
 # youtubeをmp3としてダウンロード
     t_mp3path = dlyoutubeasmp3.dlyoutubeasmp3(t_tagUrl, t_title)
