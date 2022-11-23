@@ -10,4 +10,4 @@ python -u "d:\11_github\sound\src\synthesis\synthesyswab.py"
 $StopTime = Get-Date
 Write-Host ($StopTime - $StartTime).TotalSeconds
 
-# test#2
+# test#2desu
