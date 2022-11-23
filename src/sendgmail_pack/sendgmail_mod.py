@@ -2,13 +2,14 @@ import smtplib
 from email.mime.text import MIMEText
 from email.utils import formatdate
 
-def sendgmail():
+def sendgmail(a_exec_time):
 
     sendAddress = 't.to106ki@gmail.com' #自分のメールアドレス
-    password = 'to106kita9ma' #パスワード
+    # password = 'to106kita9ma' #パスワード
+    password = 'eqyezsefmxmuwqux' #パスワード
 
     subject = '【実行完了】AutoBGM'
-    bodyText = 'AutoBGMの定期実行タスクが完了しました。'
+    bodyText = f'''AutoBGMの定期実行タスクが完了しました。\n実行時間は{a_exec_time}[min]でした。'''
     fromAddress = 'AutoBGM'
     toAddress = 't.to106ki@gmail.com'
 
@@ -32,4 +33,4 @@ def sendgmail():
 
 if __name__ == "__main__":
     import sys
-    sendgmail()
+    sendgmail(sys.argv[1])

@@ -8,6 +8,13 @@ python -u "d:\11_github\sound\src\DemucsGui\GUI\GuiMain.py"
 python -u "d:\11_github\sound\src\synthesis\synthesyswab.py"
 
 $StopTime = Get-Date
-Write-Host ($StopTime - $StartTime).TotalSeconds
+Write-Host ($StopTime - $StartTime).TotalMinutes
+# AutoBGM実行トータル時間
+$num = ($StopTime - $StartTime).TotalMinutes
+
+# 小数点第四位を四捨五入して第一位までの値とする。
+$mailarg = [Math]::Round($num, 1, [MidpointRounding]::AwayFromZero);
+# synthesis wav by pydub
+python -u "d:\11_github\sound\src\sendgmail_pack\sendgmail_mod.py" $mailarg
 
 # test#3
