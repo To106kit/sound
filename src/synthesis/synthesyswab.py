@@ -2,6 +2,7 @@
 from pydub import AudioSegment
 import os
 import pathlib
+import numpy as np
 
 def synthsiswab():
 
@@ -14,6 +15,7 @@ def synthsiswab():
     t_bass_name = "bass.wav"
     t_drums_name = "drums.wav"
     t_other_name = "other.wav"
+    t_synthsys_sound_list = []
 
     # 入力対象フォルダ一覧を取得
     t_input_list= os.listdir(t_base_path)
@@ -30,12 +32,13 @@ def synthsiswab():
         t_output_file = os.path.join(t_output_path, "mixed_sounds.wav") # 出力ファイル名
         # すでに合成済みであれば、なにもせず次対象に移る。
         if os.path.isfile(t_output_file):
-            print("this wav is used synthesis. So Skip.")
+            # print("this wav is used synthesis. So Skip.")
             continue
         else:
             # 合成していないため、合成処理に移る。
             t_abs_path = os.path.join(t_base_path, t_idx_path)
-            print(t_abs_path)
+            t_sound_name = os.path.splitext(os.path.basename(t_abs_path))[0]
+            t_synthsys_sound_list = t_synthsys_sound_list + [t_sound_name]
             # 入力ファイルパスを作成
             t_bass_sound = os.path.join(t_abs_path, t_bass_name)
             t_drums_sound = os.path.join(t_abs_path, t_drums_name)
@@ -52,8 +55,11 @@ def synthsiswab():
 
             # 保存
             t_output2.export(t_output_file, format="wav")
-            print("synthesis is completed!!")
 
+    t_synth_sound_for_print = "\n".join(t_synthsys_sound_list)
+    # エスケープシーケンス無効化
+    print(repr(t_synth_sound_for_print))
+    return t_synthsys_sound_list
 
 if __name__ == "__main__":
     synthsiswab()
