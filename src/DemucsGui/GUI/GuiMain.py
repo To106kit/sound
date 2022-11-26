@@ -104,7 +104,7 @@ def LoadModel():
             pathlib.Path("d:\\11_github\\sound\\src\\DemucsGui\\GUI\\pretrained") if len("d:\\11_github\\sound\\src\\DemucsGui\\GUI\\pretrained") else None,
             device="cpu",
         )
-        time.sleep(10)
+        time.sleep(20)
 
     except:
         logging.error(traceback.format_exc())
@@ -150,7 +150,7 @@ def LoadModel():
         if t_filename not in t_exist_dir:
             _thread.start_new_thread(Separate, (pathlib.Path(t_path),))
             print(t_filename + " is not exist. So separate action do.")
-            time.sleep(60)
+            time.sleep(80)
         else:
             print("this separate is exist.")
         # GPUによる音声分離処理がだいたい60s程度のため。。。
@@ -293,7 +293,7 @@ def ChooseSeparate():
 
 
 def Separate(File: pathlib.Path):
-    time.sleep(15)
+    time.sleep(30)
     PPE.config(state=tkinter.DISABLED)
     POE.config(state=tkinter.DISABLED)
     PHE.config(state=tkinter.DISABLED)
@@ -314,7 +314,7 @@ def Separate(File: pathlib.Path):
             SetStatusText,
         )
 
-        time.sleep(15)
+        time.sleep(30)
         print("two mp3")
     except RuntimeError:
         tkinter.messagebox.showerror(
