@@ -1,9 +1,9 @@
 $StartTime = Get-Date
 
-# download mp3 from youtube
-python -u "d:\11_github\sound\src\main.py"
-# separate mp3 by demucs
-python -u "d:\11_github\sound\src\DemucsGui\GUI\GuiMain.py"
+# # download mp3 from youtube
+# python -u "d:\11_github\sound\src\main.py"
+# # separate mp3 by demucs
+# python -u "d:\11_github\sound\src\DemucsGui\GUI\GuiMain.py"
 # synthesis wav by pydub
 $synth_sound = python -u "d:\11_github\sound\src\synthesis\synthesyswab.py"
 
