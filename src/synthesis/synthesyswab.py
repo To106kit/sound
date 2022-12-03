@@ -11,7 +11,7 @@ def synthsiswab():
     ######### 入力ファイル格納先により以下パスを変更すること。########
     t_base_path = "D:\\11_github\\sound\\result\\demcsgui"
     ######### 出力(合成)ファイル格納先により以下パスを変更すること。########
-    t_outputBaseDir = "H:\\マイドライブ\\synthesis"
+    t_outputBaseDir = "I:\\マイドライブ\\synthesis"
     t_bass_name = "bass.wav"
     t_drums_name = "drums.wav"
     t_other_name = "other.wav"
