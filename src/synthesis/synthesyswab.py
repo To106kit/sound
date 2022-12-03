@@ -11,7 +11,7 @@ def synthsiswab():
     ######### 入力ファイル格納先により以下パスを変更すること。########
     t_base_path = "D:\\11_github\\sound\\result\\demcsgui"
     ######### 出力(合成)ファイル格納先により以下パスを変更すること。########
-    t_outputBaseDir = "D:\\11_github\\sound\\result\\synthesis"
+    t_outputBaseDir = "H:\\マイドライブ\\synthesis"
     t_bass_name = "bass.wav"
     t_drums_name = "drums.wav"
     t_other_name = "other.wav"
@@ -29,7 +29,8 @@ def synthsiswab():
         t_output_path = os.path.join(t_outputBaseDir, t_replace_name)
         # 出力先ディレクトリが存在しない場合は作成
         os.makedirs(t_output_path, exist_ok=True)
-        t_output_file = os.path.join(t_output_path, "mixed_sounds.wav") # 出力ファイル名
+        # TODO : 出力wavファイルの変更
+        t_output_file = os.path.join(t_output_path, t_replace_name + ".wav") # 出力ファイル名
         # すでに合成済みであれば、なにもせず次対象に移る。
         if os.path.isfile(t_output_file):
             # print("this wav is used synthesis. So Skip.")
